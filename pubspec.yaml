@@ -1,0 +1,50 @@
+name: ecommerce_app
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+
+dependencies:
+  carousel_slider: ^5.0.0
+  cloud_firestore: ^5.6.1
+  cupertino_icons: ^1.0.6
+  firebase_auth: ^5.3.1
+  firebase_core: ^3.6.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.6
+  flutter_dash: ^1.0.0
+  flutter_native_splash: ^2.3.0
+  google_sign_in: ^6.2.1
+  persistent_bottom_nav_bar_v2: ^5.3.1
+  smooth_page_indicator: ^1.2.0+3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/mohamed.jpg
+    - assets/images/1.png
+    - assets/images/2.png
+    - assets/images/3.png
+    - assets/images/catagories/Polo-Black-PNG-Free-File-Download.png
+    - assets/images/catagories/t-shirt-.png
+    - assets/images/catagories/laptop.png
+    - assets/images/catagories/jokta3eqk4qoo8ccrvgfps5t2e-05f50dc3eefb990a207120b52cbe94fa.png
+    - assets/images/catagories/jeans-t-shirt-shoulder-denim-sleeve-jeans-77b19fd2eb02c454fdfe17daf2e30e15.png
+    - assets/images/catagories/u77v1hhjettravshgkmdkus43l.png
+    - assets/images/Empty-Cart-.png
+    - assets/images/Mastercard-PNG-HD-Quality.png
+    - assets/images/icons8-google-96.png
+    - assets/images/icons8-facebook-96.png
+    - assets/images/rb_174669.png
+    - assets/images/edit-button.png
