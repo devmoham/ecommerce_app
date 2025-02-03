@@ -7,7 +7,7 @@ final class ProductDetailsInitial extends ProductDetailsState {}
 final class ProductDetailsLoadding extends ProductDetailsState {}
 
 final class ProductDetailsLoaded extends ProductDetailsState {
-  final ProductModel product;
+  final ProductItemModel product;
 
   ProductDetailsLoaded({required this.product});
 }

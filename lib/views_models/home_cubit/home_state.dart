@@ -4,18 +4,21 @@ sealed class HomeState {}
 
 final class HomeInitial extends HomeState {}
 
-final class HomeLoadding extends HomeState {}
+final class HomeLoading extends HomeState {}
+
+
 
 final class HomeLoaded extends HomeState {
-  final List<ProductModel> products;
-  final List<HomeCarouselItemModel> dummyHomeCarouselItems;
+  final List<ProductItemModel> products;
+  final List<HomeCarouselItemModel> carouselItems;
 
-   HomeLoaded({
+  HomeLoaded({
     required this.products,
-    required this.dummyHomeCarouselItems,
+    required this.carouselItems,
   });
 }
 
-
-
-
+final class HomeError extends HomeState {
+  final String message;
+  HomeError(this.message);
+}

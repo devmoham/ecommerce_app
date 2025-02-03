@@ -2,7 +2,7 @@ import 'package:ecommerce_app/models/product_model.dart';
 import 'package:flutter/material.dart';
 
 class ProductItem extends StatelessWidget {
-  final ProductModel productitem;
+  final ProductItemModel productitem;
 
   const ProductItem({super.key, required this.productitem});
 
@@ -70,6 +70,5 @@ class ProductItem extends StatelessWidget {
         ],
       ),
     );
-    
   }
 }

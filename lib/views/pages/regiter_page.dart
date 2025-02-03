@@ -123,7 +123,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         onTap: () async {
                           if (_formKey.currentState!.validate()) {
                             await cubit.registerWithEmailandPassword(
-                                emailController.text, passwordController.text);
+                                emailController.text, passwordController.text,usernameController.text);
                           }
                         },
                       );

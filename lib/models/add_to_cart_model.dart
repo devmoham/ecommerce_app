@@ -2,7 +2,7 @@ import 'package:ecommerce_app/models/product_model.dart';
 
 class addToCartModel {
   String Id;
-  ProductModel product;
+  ProductItemModel product;
   ProductSize size;
   int quantity;
 
@@ -11,14 +11,13 @@ class addToCartModel {
     required this.product,
     required this.size,
     required this.quantity,
-
   });
 
-  double get totalPrice =>  product.price * quantity ;
+  double get totalPrice => product.price * quantity;
 
   addToCartModel copyWith({
     String? Id,
-    ProductModel? product,
+    ProductItemModel? product,
     ProductSize? size,
     int? quantity,
   }) {

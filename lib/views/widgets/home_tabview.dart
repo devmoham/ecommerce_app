@@ -23,8 +23,12 @@ class _HomeTabViewState extends State<HomeTabView> {
         MediaQuery.of(context).orientation == Orientation.landscape;
     return BlocBuilder<HomeCubit, HomeState>(
       bloc: BlocProvider.of<HomeCubit>(context),
+      buildWhen: (previous, current) =>
+          current is HomeLoading ||
+          current is HomeLoaded ||
+          current is HomeError,
       builder: (context, state) {
-        if (state is HomeLoadding) {
+        if (state is HomeLoading) {
           return Center(
             child: CircularProgressIndicator(),
           );
@@ -35,12 +39,12 @@ class _HomeTabViewState extends State<HomeTabView> {
               children: [
                 CarouselSlider.builder(
                   carouselController: _controller,
-                  itemCount: state.dummyHomeCarouselItems.length,
+                  itemCount: state.carouselItems.length,
                   itemBuilder: (context, index, realIndex) {
                     return ClipRRect(
                       borderRadius: BorderRadius.circular(16.0),
                       child: Image.asset(
-                        state.dummyHomeCarouselItems[index].imgUrl,
+                        state.carouselItems[index].imgUrl,
                         fit: BoxFit.fill,
                         height: isLandScape
                             ? size.height * 0.6
@@ -72,7 +76,7 @@ class _HomeTabViewState extends State<HomeTabView> {
                 Center(
                   child: AnimatedSmoothIndicator(
                     activeIndex: _current,
-                    count: state.dummyHomeCarouselItems.length,
+                    count: state.carouselItems.length,
                     effect: const WormEffect(
                       dotHeight: 8,
                       dotWidth: 8,
@@ -106,8 +110,10 @@ class _HomeTabViewState extends State<HomeTabView> {
                   ),
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: ()=> Navigator.of(context,rootNavigator: true).pushNamed(AppRoute.productDetailsRoute ,arguments:state.products[index].id ),
-                      child: ProductItem(productitem: state.products[index]));
+                        onTap: () => Navigator.of(context, rootNavigator: true)
+                            .pushNamed(AppRoute.productDetailsRoute,
+                                arguments: state.products[index].id),
+                        child: ProductItem(productitem: state.products[index]));
                   },
                 ),
               ],
